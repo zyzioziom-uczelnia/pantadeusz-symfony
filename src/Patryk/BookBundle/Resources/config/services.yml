@@ -1,0 +1,4 @@
+services:
+#    patryk_book.example:
+#        class: Patryk\BookBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

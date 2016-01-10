@@ -1,0 +1,3 @@
+patryk_book_homepage:
+    path:     /
+    defaults: { _controller: PatrykBookBundle:Default:index }

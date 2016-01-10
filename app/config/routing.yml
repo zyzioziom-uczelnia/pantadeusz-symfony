@@ -1,3 +1,7 @@
+patryk_book:
+    resource: "@PatrykBookBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
