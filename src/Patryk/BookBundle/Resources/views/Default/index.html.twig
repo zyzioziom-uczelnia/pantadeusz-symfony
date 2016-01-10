@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
 
+{% block stylesheets %}
+  {{ asset('css/navbar.css') }}
+{% endblock %}
+
 {% block body %}
 
 {{ chapter_content }}
