@@ -8,6 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction($chapter)
     {
-        return $this->render('PatrykBookBundle:Default:index.html.twig', array('chapter' => $chapter));
+        $chapter_content = file_get_contents('chapters/'.$chapter.'.html');
+        return $this->render('PatrykBookBundle:Default:index.html.twig', array('chapter' => $chapter, 'chapter_content' => $chapter_content));
     }
 }
