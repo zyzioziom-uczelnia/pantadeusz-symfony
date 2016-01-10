@@ -2,12 +2,69 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Pan Tadeusz{% endblock %}</title>
+        <title>
+          {% block title %}
+            Pan Tadeusz, czyli ostatni zajazd na Litwie
+          {% endblock %}
+        </title>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="container">
+
+  		<h1 class="text-center">Pan Tadeusz, czyli ostatni zajazd na Litwie</h1>
+  		<h3 class="text-center">Historia szlachecka z roku 1811 i 1812 we dwunastu ksiegach wierszem</h3>
+
+      <div class"row">
+        <div id="menu">
+          <nav>
+            <div class="nav-wrapper">
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                {% for i in 1..12 %}
+                  <li><a href="/k{{i}}">Księga {{i}}</a></li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </nav>
+
+  		  </div>
+  			</div>
+      <div class="row">
+        <div class="col s6 panel panel-default">
+          <div class="panel-body">
+            <h4>Refleksje</h4>
+
+            <form class="col s12">
+              <div class="input-field col s12">
+                <input type="text" name="title" id="title"><br>
+                <label for="title">Tytuł:</label>
+              </div>
+              <div class="input-field col s12">
+                <textarea name="reflection" id="recflection" class="materialize-textarea"></textarea>
+                <label for="reflection">Treść:</label>
+              </div>
+            <input type="submit" value="Dodaj refleksję" class="btn">
+            </form>
+
+
+
+
+          </div>
+        </div>
+		    <div class="col s6 panel panel-default">
+          <div class="panel-body">
+    			  {% block body %}{% endblock %}
+          </div>
+		  </div>
+		</div>
+
+
+        <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
