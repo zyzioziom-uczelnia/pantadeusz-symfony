@@ -3,12 +3,15 @@
 namespace Patryk\BookBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use PatrykBookBundle\Entity\Reflection;
 
 class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PatrykBookBundle:Default:index.html.twig');
+        $repository = $this->getDoctrine()->getRepository('PatrykBookBundle:Reflection');
+        $reflections = $repository->findAll();
+        return $this->render('PatrykBookBundle:Default:index.html.twig', array('reflections' => $reflections));
 
     }
 

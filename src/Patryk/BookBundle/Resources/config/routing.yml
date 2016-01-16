@@ -9,3 +9,15 @@ book:
 aboutme:
     path:     /aboutme
     defaults: { _controller: PatrykBookBundle:Default:aboutme}
+
+index:
+    path:     /reflection
+    defaults: { _controller: PatrykBookBundle:Reflection:index }
+
+new:
+    path:     /reflection/new
+    defaults: { _controller: PatrykBookBundle:Reflection:new }
+
+create:
+    path:     reflection/create
+    defaults: { _controller: PatrykBookBundle:Reflection:create }
