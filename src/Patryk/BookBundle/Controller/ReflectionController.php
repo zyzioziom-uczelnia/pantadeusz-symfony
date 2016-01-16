@@ -3,12 +3,17 @@
 namespace Patryk\BookBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Patryk\BookBundle\Entity\Reflection;
+use Symfony\Component\HttpFoundation\Request;
 
 class ReflectionController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PatrykBookBundle:Reflection:index.html.twig', array(
+        $repository = $this->getDoctrine()->getRepository('PatrykBookBundle:Reflection');
+        $reflections = $repository->findAll();
+
+        return $this->render('PatrykBookBundle:Reflection:index.html.twig', array('reflections' => $reflections
             // ...
         ));
     }
@@ -22,9 +27,19 @@ class ReflectionController extends Controller
 
     public function createAction()
     {
-        return $this->render('PatrykBookBundle:Reflection:create.html.twig', array(
-            // ...
-        ));
+
+        $request = Request::createFromGlobals();
+
+        $reflection = new Reflection();
+        $reflection -> setTitle($request->request->get('title', 'test-title'));
+        $reflection -> setBody($request->request->get('body', 'test-body'));
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($reflection);
+        $em->flush();
+
+        return $this->redirectToRoute('reflection');
     }
 
 }

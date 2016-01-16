@@ -9,8 +9,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $repository = $this->getDoctrine()->getRepository('PatrykBookBundle:Reflection');
-        $reflections = $repository->findAll();
+        
         return $this->render('PatrykBookBundle:Default:index.html.twig', array('reflections' => $reflections));
 
     }

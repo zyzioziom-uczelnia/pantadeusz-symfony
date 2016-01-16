@@ -3,5 +3,25 @@
 {% block title %}PatrykBookBundle:Reflection:new{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Reflection:new page</h1>
+<div class="col s6 panel panel-default">
+  <div class="panel-body">
+    <h4>Refleksje</h4>
+
+    <form method="post" action="/reflection/create" class="col s12">
+      <div class="input-field col s12">
+        <input type="text" name="title" id="title"><br>
+        <label for="title">Tytuł:</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea name="body" id="body" class="materialize-textarea"></textarea>
+        <label for="body">Treść:</label>
+      </div>
+    <input type="submit" value="Dodaj refleksję" class="btn">
+    </form>
+
+
+
+
+  </div>
+</div>
 {% endblock %}

@@ -3,5 +3,17 @@
 {% block title %}PatrykBookBundle:Reflection:index{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Reflection:index page</h1>
+<div class="row">
+  <a href="/reflection/new" class="btn">Utwórz nową refleksję</a>
+</div>
+
+{% for reflection in reflections  %}
+<div class="row">
+  <div class="col s12">
+    <h1>{{ reflection.title }}</h1>
+    <p>{{ reflection.body }}</p>
+    <hr/>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}

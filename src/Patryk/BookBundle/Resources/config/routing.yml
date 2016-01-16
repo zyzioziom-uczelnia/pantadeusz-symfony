@@ -10,7 +10,7 @@ aboutme:
     path:     /aboutme
     defaults: { _controller: PatrykBookBundle:Default:aboutme}
 
-index:
+reflection:
     path:     /reflection
     defaults: { _controller: PatrykBookBundle:Reflection:index }
 
