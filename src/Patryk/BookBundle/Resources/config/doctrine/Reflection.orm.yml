@@ -1,0 +1,17 @@
+Patryk\BookBundle\Entity\Reflection:
+    type: entity
+    table: null
+    repositoryClass: Patryk\BookBundle\Repository\ReflectionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 100
+        body:
+            type: text
+    lifecycleCallbacks: {  }
