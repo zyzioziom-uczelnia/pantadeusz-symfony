@@ -22,8 +22,10 @@
           <nav>
             <div class="nav-wrapper">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/aboutme">O mnie</a></li>
                 {% for i in 1..12 %}
-                  <li><a href="/k{{i}}">Księga {{i}}</a></li>
+                  <li><a href="/book/k{{i}}">Księga {{i}}</a></li>
                 {% endfor %}
 
               </ul>
@@ -32,6 +34,7 @@
 
   		  </div>
   			</div>
+
       <div class="row">
         <div class="col s6 panel panel-default">
           <div class="panel-body">

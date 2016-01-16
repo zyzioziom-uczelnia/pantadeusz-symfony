@@ -1,3 +1,11 @@
 patryk_book_homepage:
-    path:     /{chapter}
-    defaults: { _controller: PatrykBookBundle:Default:index , chapter: null}
+    path:     /
+    defaults: { _controller: PatrykBookBundle:Default:index}
+
+book:
+    path:     /book/{chapter}
+    defaults: { _controller: PatrykBookBundle:Default:book, chapter: null}
+
+aboutme:
+    path:     /aboutme
+    defaults: { _controller: PatrykBookBundle:Default:aboutme}
