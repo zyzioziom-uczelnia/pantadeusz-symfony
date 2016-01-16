@@ -11,7 +11,7 @@ class ReflectionController extends Controller
     public function indexAction()
     {
         $repository = $this->getDoctrine()->getRepository('PatrykBookBundle:Reflection');
-        $reflections = $repository->findAll();
+        $reflections = array_reverse($repository->findAll());
 
         return $this->render('PatrykBookBundle:Reflection:index.html.twig', array('reflections' => $reflections
             // ...
